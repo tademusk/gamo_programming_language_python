@@ -1,10 +1,14 @@
 import basic_lang
-print("\nGamo programming language interpreter version 1.0.0")
-while True:
-    text = input('GamoLang >> ')
-    result, error = basic_lang.run('<stdin>', text)
 
-    if error: print(error.as_string())
-    else: 
-        if len(result) > 0:
-            print(result)
+while True:
+	text = input('GamoLang >> ')
+	if text.strip() == "": continue
+	result, error = basic_lang.run('<stdin>', text)
+
+	if error:
+		print(error.as_string())
+	elif result:
+		if len(result.elements) == 1:
+			print(repr(result.elements[0]))
+		else:
+			print(repr(result))
