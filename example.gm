@@ -1,0 +1,7 @@
+lameti x = 1
+
+hanishe x < 10 iyappe
+    xaffa("hello")
+    lameti x = x + 1
+onga
+
